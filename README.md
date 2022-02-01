@@ -3,8 +3,8 @@
 
 Charles Gagnon
 Matthew Cournoyer
-Harry Hennessy
 Ananda Shumock-Bailey
+Harry Hennessy
 
 # Team members: 
 1. Charles Gagnon
