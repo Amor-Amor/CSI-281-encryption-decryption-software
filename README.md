@@ -1,5 +1,4 @@
 # CSI-281-encryption-decryption-software
-# encryption/decryption-software
 
 # Team members: 
 1. Charles Gagnon
@@ -8,3 +7,4 @@
 4. Harry Hennessy
 5. Amor Acebo
 6. Eli Minkoff
+
