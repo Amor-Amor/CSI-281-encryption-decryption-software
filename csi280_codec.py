@@ -81,6 +81,7 @@ class SubstitutionCypher(Codec):
         """Caeser cypher with random offset"""
         return SubstitutionCypher.Caeser(secrets.randbelow(26))
 
+    @staticmethod
     def Rot13():
         """The laziest Caeser cypher"""
         return SubstitutionCypher.Caeser(13)
