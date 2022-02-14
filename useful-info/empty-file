@@ -1,0 +1,652 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "key = {\n",
+    "    \"a\": \"e\", \n",
+    "    \"b\": \"r\",\n",
+    "    \"c\": \"t\",\n",
+    "    \"d\": \"y\",\n",
+    "    \"e\": \"u\",\n",
+    "    \"f\": \"i\",\n",
+    "    \"g\": \"o\",\n",
+    "    \"h\": \"p\",\n",
+    "    \"i\": \"q\",\n",
+    "    \"j\": \"s\",\n",
+    "    \"k\": \"w\",\n",
+    "    \"l\": \"d\",\n",
+    "    \"m\": \"g\",\n",
+    "    \"n\": \"h\",\n",
+    "    \"o\": \"j\",\n",
+    "    \"p\": \"k\",\n",
+    "    \"q\": \"l\",\n",
+    "    \"r\": \"x\",\n",
+    "    \"s\": \"c\",\n",
+    "    \"t\": \"v\",    \n",
+    "    \"u\": \"b\",\n",
+    "    \"v\": \"n\",\n",
+    "    \"w\": \"f\",\n",
+    "    \"x\": \"a\",\n",
+    "    \"y\": \"z\",\n",
+    "    \"z\": \"m\"\n",
+    "}"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import commons"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "m = \"Attack to night\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "m = commons.preprocessing(m)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'attacktonight'"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "m"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def encryptLetter(letter):\n",
+    "    try:\n",
+    "        return key[letter]\n",
+    "    except:\n",
+    "        return None"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def decryptLetter(code):\n",
+    "    for i in key:\n",
+    "        if key[i] == code:\n",
+    "            return i"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "plaintext = commons.lettersOfPlaintext(m)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#plaintext"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Encryption"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "ciphertext = []\n",
+    "for letter in plaintext:\n",
+    "    ciphertext.append(encryptLetter(letter))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['e', 'v', 'v', 'e', 't', 'w', 'v', 'j', 'h', 'q', 'o', 'p', 'v']"
+      ]
+     },
+     "execution_count": 11,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "ciphertext"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Decryption"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "restored_text = []\n",
+    "for i in ciphertext:\n",
+    "    restored_text.append(decryptLetter(i))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['a', 't', 't', 'a', 'c', 'k', 't', 'o', 'n', 'i', 'g', 'h', 't']"
+      ]
+     },
+     "execution_count": 13,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "restored_text"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Attacking"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import math"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Brute force attack requires  403291461126605635584000000  checkings!\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"Brute force attack requires \",math.factorial(26),\" checkings!\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Frequency Analysis Attack"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "ciphertext = \"vjrujxhjvvjruvpevqcvpulbucvqjhfpuvpuxvqchjrduxqhvpugqhyvjcbiiuxvpucdqhocehyexxjfcjijbvxeoujbcijxvbhujxvjvewuexgceoeqhcvecuejivxjbrducehyrzjkkjcqhouhyvpugvjyquvjcduukhjgjxuehyrzecduukvjcezfuuhyvpupuexvetpuehyvpuvpjbcehyhevbxedcpjtwcvpeviducpqcpuqxvjvqcetjhcbggevqjhyunjbvdzvjrufqcpyvjyquvjcduukvjcduukkuxtpehtuvjyxuegezvpuxucvpuxbrijxqhvpevcduukjiyuevpfpevyxuegcgeztjgufpuhfupenucpbiiduyjiivpqcgjxvedtjqdgbcvoqnubckebcuvpuxucvpuxuckutvvpevgewuctedegqvzjicjdjhodqiuijxfpjfjbdyruexvpufpqkcehyctjxhcjivqguvpjkkxuccjxcfxjhovpukxjbygehctjhvbgudzvpukehocjiyqckxqmydjnuvpudefcyudezvpuqhcjduhtujijiiqtuehyvpuckbxhcvpevkevquhvguxqvjivpbhfjxvpzvewucfpuhpupqgcudigqopvpqclbquvbcgewufqvperexurjywqhfpjfjbdyiexyudcruexvjoxbhvehycfuevbhyuxefuexzdqiurbvvpevvpuyxueyjicjguvpqhoeivuxyuevpvpubhyqctjnuxuytjbhvxzixjgfpjcurjbxhhjvxenudduxxuvbxhckbmmducvpufqddehygewucbcxevpuxruexvpjcuqddcfupenuvpehidzvjjvpuxcvpevfuwhjfhjvjivpbctjhctquhtuyjucgewutjfexycjibceddehyvpbcvpuhevqnupbujixucjdbvqjhqccqtwdquyjuxfqvpvpukedutecvjivpjbopvehyuhvuxkxqcucjioxuevkqvtpehygjguhvfqvpvpqcxuoexyvpuqxtbxxuhvcvbxhefxzehydjcuvpuhegujietvqjh\""
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "We know this ciphertext is encrypted by substitution cipher but we do not know the key table"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "ciphertext = list(ciphertext)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "unigrams = pd.DataFrame(ciphertext, columns=[\"letter\"])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "bigrams = []\n",
+    "for i in range(0, len(ciphertext)-2):\n",
+    "    bigrams.append(ciphertext[i]+ciphertext[i+1])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "bigrams = pd.DataFrame(bigrams, columns=[\"bigram\"])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "trigrams = []\n",
+    "for i in range(0, len(ciphertext) - 3):\n",
+    "    trigrams.append(ciphertext[i]+ciphertext[i+1]+ciphertext[i+2])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "trigrams = pd.DataFrame(trigrams, columns=[\"trigram\"])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>letter</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>u</th>\n",
+       "      <td>12.465878</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>v</th>\n",
+       "      <td>10.646042</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>j</th>\n",
+       "      <td>8.462238</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>e</th>\n",
+       "      <td>7.643312</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>c</th>\n",
+       "      <td>7.461328</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "      letter\n",
+       "u  12.465878\n",
+       "v  10.646042\n",
+       "j   8.462238\n",
+       "e   7.643312\n",
+       "c   7.461328"
+      ]
+     },
+     "execution_count": 24,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "pd.DataFrame(100*unigrams.letter.value_counts()/unigrams.letter.value_counts().sum()).head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>bigram</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>vp</th>\n",
+       "      <td>4.649043</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>pu</th>\n",
+       "      <td>3.008204</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>hy</th>\n",
+       "      <td>1.731996</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>vj</th>\n",
+       "      <td>1.640839</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>ue</th>\n",
+       "      <td>1.549681</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "      bigram\n",
+       "vp  4.649043\n",
+       "pu  3.008204\n",
+       "hy  1.731996\n",
+       "vj  1.640839\n",
+       "ue  1.549681"
+      ]
+     },
+     "execution_count": 25,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "pd.DataFrame(100*bigrams.bigram.value_counts()/bigrams.bigram.value_counts().sum()).head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>trigram</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>vpu</th>\n",
+       "      <td>2.372263</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>ehy</th>\n",
+       "      <td>1.186131</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>uvp</th>\n",
+       "      <td>0.821168</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>vpe</th>\n",
+       "      <td>0.821168</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>cvp</th>\n",
+       "      <td>0.729927</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "      trigram\n",
+       "vpu  2.372263\n",
+       "ehy  1.186131\n",
+       "uvp  0.821168\n",
+       "vpe  0.821168\n",
+       "cvp  0.729927"
+      ]
+     },
+     "execution_count": 26,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "pd.DataFrame(100*trigrams.trigram.value_counts()/trigrams.trigram.value_counts().sum()).head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "key = {\n",
+    "    \"v\": \"t\",\n",
+    "    \"p\": \"h\",\n",
+    "    \"u\": \"e\",\n",
+    "    \"e\": \"a\",\n",
+    "    \"h\": \"n\",\n",
+    "    \"y\": \"d\",\n",
+    "    \"v\": \"t\",\n",
+    "    \"j\": \"o\",\n",
+    "    \"r\": \"b\",\n",
+    "    \"x\": \"r\",\n",
+    "    \"q\": \"i\",\n",
+    "    \"c\": \"s\",\n",
+    "    \"l\": \"q\",\n",
+    "    \"b\": \"u\",\n",
+    "    \"f\": \"w\",\n",
+    "    \"g\": \"m\",\n",
+    "    \"i\": \"f\",\n",
+    "    \"t\": \"c\",\n",
+    "    \"d\": \"l\",\n",
+    "}"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "v  ->  t\n",
+      "j  ->  o\n",
+      "r  ->  b\n",
+      "u  ->  e\n",
+      "j  ->  o\n",
+      "x  ->  r\n",
+      "h  ->  n\n",
+      "j  ->  o\n",
+      "v  ->  t\n",
+      "v  ->  t\n",
+      "j  ->  o\n",
+      "r  ->  b\n",
+      "u  ->  e\n",
+      "v  ->  t\n",
+      "p  ->  h\n",
+      "e  ->  a\n",
+      "v  ->  t\n",
+      "q  ->  i\n",
+      "c  ->  s\n",
+      "v  ->  t\n",
+      "p  ->  h\n",
+      "u  ->  e\n",
+      "l  ->  q\n",
+      "b  ->  u\n",
+      "u  ->  e\n",
+      "c  ->  s\n",
+      "v  ->  t\n",
+      "q  ->  i\n",
+      "j  ->  o\n",
+      "h  ->  n\n"
+     ]
+    }
+   ],
+   "source": [
+    "index = 0\n",
+    "for i in ciphertext:\n",
+    "    if index < 30:\n",
+    "        print(i,\" -> \",encryptLetter(i))\n",
+    "    index = index + 1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
