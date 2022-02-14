@@ -1,6 +1,7 @@
 """Implementing different ways to create an encryption/decryption key."""
 
 import random
+import secrets
 
 
 def rand_int_key():
@@ -26,13 +27,20 @@ def prime_num_key():
     index = random.randint(0, 8)
 
     # Returns the prime number at the given index
-    key = prime_list[index]
-    return key
+    return prime_list[index]
+
+
+def secrets_key():
+    """Create a key using secrets."""
+    # The module provides access to secure source of randomness
+    encryption_key = secrets.randbelow(27)
+    return encryption_key
 
 
 def main():
     print(rand_int_key())
     print(prime_num_key())
+    print(secrets_key())
 
 
 if __name__ == '__main__':
