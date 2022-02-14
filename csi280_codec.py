@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """© 2022 Eli Array Minkoff"""
-from string import *
+from string import printable, ascii_uppercase, ascii_lowercase
 from random import shuffle
 import secrets  # cryptographically secure pseudo-random number generation
 
