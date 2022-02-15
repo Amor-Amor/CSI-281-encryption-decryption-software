@@ -28,11 +28,11 @@ class KeyObj:
         # TODO
 
     def dsa(self):
-        """Uses standard rsa key style"""
+        """Uses standard dsa key style"""
         # TODO
 
     def ecdsa(self):
-        """Uses standard rsa key style"""
+        """Uses standard ecdsa key style"""
         # TODO
 
     def alg_caesar(self):
