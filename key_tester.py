@@ -5,7 +5,7 @@ class KeyObj:
     def __init__(self, key):
         self.key = key
 
-    def algorithm_caesar(self):
+    def alg_caesar(self):
         """Uses caesar cipher to perform encryption"""
         # TODO
 
@@ -19,6 +19,10 @@ class KeyObj:
 
 
 def main():
+    print("Enter message: ")
+    message = input()
+    print("Enter algorithm style: ")
+    alg = input()
     print("Enter desired key: ")
     key = input()
     KeyObj(key)
