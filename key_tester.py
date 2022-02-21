@@ -10,9 +10,8 @@ def permutation_key():
         i = count
         key.append(i)
         count += 1
+    random.shuffle(key)
     print(key)
-    # TODO random shuffle
-
     return key
 
 
