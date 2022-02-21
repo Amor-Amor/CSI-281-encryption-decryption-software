@@ -3,14 +3,22 @@ import random
 
 def permutation_key():
     """Generate key for permutation cypher"""
+    # Create a random size for the list
     size = random.randint(3, 10)
+
     key = []
     count = 0
+
+    # Loops over each element in the list
     for i in range(0, size, 1):
+        # Assigns the element to it's index
         i = count
         key.append(i)
         count += 1
+
+    # Shuffles the list
     random.shuffle(key)
+
     print(key)
     return key
 
