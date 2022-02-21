@@ -3,7 +3,7 @@ import random
 
 def permutation_key():
     """Generate key for permutation cypher"""
-    # Create a random size for the list
+    # Create a random size for the list from 3 to 10
     size = random.randint(3, 10)
 
     key = []
@@ -16,7 +16,7 @@ def permutation_key():
         key.append(i)
         count += 1
 
-    # Shuffles the list
+    # Randomly shuffles the list
     random.shuffle(key)
 
     print(key)
