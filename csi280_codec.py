@@ -85,3 +85,46 @@ class SubstitutionCypher(Codec):
     def Rot13():
         """The laziest Caeser cypher"""
         return SubstitutionCypher.Caeser(13)
+
+
+class PermutationCypher(Codec):
+    """Uses the plaintext message letters but rearranges their order"""
+
+    def encode(self, plaintext):
+        """Encode the plaintext with self.key"""
+        ciphertext = ""
+        buffer = " " * (len(plaintext) % len(self.key))
+        plaintext += buffer
+        cycles = len(plaintext) / len(self.key)
+        for i in range(0, int(cycles)):
+            block = ""
+            for j in range(0, len(key)):
+                block += plaintext[j + i * len(key)]
+
+            encrypted_block = ""
+
+            for j in key:
+                encrypted_block += block[j]
+
+            ciphertext += encrypted_block
+        return ciphertext
+
+    def decode(self, cyphertext):
+        """Encode the plaintext with self.key"""
+        plaintext = ""
+        buffer = " " * (len(cyphertext) % len(self.key))
+        cyphertext += buffer
+        cycles = len(cyphertext) / len(self.key)
+        for i in range(0, int(cycles)):
+            block = ""
+            for j in range(0, len(key)):
+                block += cyphertext[j + i * len(self.key)]
+
+            restored_block = ""
+            for j in range(0, len(key)):
+                for k in range(0, len(key)):
+                    if j == key[k]:
+                        restored_block += block[k]
+
+            plaintext += restored_block
+        return plaintext
