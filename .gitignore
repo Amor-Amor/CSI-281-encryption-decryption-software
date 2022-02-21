@@ -1,1 +1,5 @@
 __pycache__
+.DS_Store
+.idea/vcs.xml
+.idea/workspace.xml
+encryption_decryption_examples/caesar_cipher.py
