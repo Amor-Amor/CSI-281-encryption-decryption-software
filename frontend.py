@@ -1,9 +1,3 @@
-<<<<<<< Updated upstream
-import tkinter
-
-m = tkinter.Tk()
-
-=======
 import tkinter as tk
 import csi280_codec
 
@@ -12,14 +6,8 @@ from tkinter import *
 m = tk.Tk()
 
 # Sets window title
->>>>>>> Stashed changes
 m.title('Encryption')
-button = tkinter.Button(m, text='Close', width=25, command=m.destroy)
-button.pack()
 
-<<<<<<< Updated upstream
-m.geometry("500x200")
-=======
 in_box = tk.StringVar()
 
 def click_encrypt_button():
@@ -62,5 +50,4 @@ button = tk.Button(m, text='Close', width=25, command=m.destroy).grid(row=5, col
 
 # Sets window geometry and runs
 m.geometry('550x250')
->>>>>>> Stashed changes
 m.mainloop()

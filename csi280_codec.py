@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """© 2022 Eli Array Minkoff"""
-from string import *
+from string import printable, ascii_uppercase, ascii_lowercase
 from random import shuffle
 import secrets  # cryptographically secure pseudo-random number generation
 
@@ -81,6 +81,7 @@ class SubstitutionCypher(Codec):
         """Caeser cypher with random offset"""
         return SubstitutionCypher.Caeser(secrets.randbelow(26))
 
+    @staticmethod
     def Rot13():
         """The laziest Caeser cypher"""
         return SubstitutionCypher.Caeser(13)
