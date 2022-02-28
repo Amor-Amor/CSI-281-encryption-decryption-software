@@ -37,10 +37,61 @@ def secrets_key():
     return encryption_key
 
 
+def create_key(int_key):
+    """Create an alphabetic key using the keys generated above."""
+    encryption_key = int_key
+    # Create format for key style
+    key = {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": "",
+        "f": "",
+        "g": "",
+        "h": "",
+        "i": "",
+        "j": "",
+        "k": "",
+        "l": "",
+        "m": "",
+        "n": "",
+        "o": "",
+        "p": "",
+        "q": "",
+        "r": "",
+        "s": "",
+        "t": "",
+        "u": "",
+        "v": "",
+        "w": "",
+        "x": "",
+        "y": "",
+        "z": ""
+    }
+
+    # Create string of alphabet to use to assign to elements in dictionary
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+    for letter in key:
+        if encryption_key >= len(alphabet):
+            encryption_key = 0
+
+        key[letter] = alphabet[encryption_key]
+        encryption_key += 1
+
+    for letter in key:
+        print(letter + " = " + key[letter])
+
+
 def main():
-    print(rand_int_key())
-    print(prime_num_key())
-    print(secrets_key())
+    # print(rand_int_key())
+    # print(prime_num_key())
+    # print(secrets_key())
+
+    int_key = secrets_key()
+    print("Integer key is: " + str(int_key))
+    create_key(int_key)
 
 
 if __name__ == '__main__':
