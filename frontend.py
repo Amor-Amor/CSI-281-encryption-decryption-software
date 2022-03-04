@@ -1,3 +1,4 @@
+#Matthew Cournoyer and Harrison Hennessy
 import tkinter as tk
 from turtle import bgcolor
 import csi280_codec
@@ -12,35 +13,57 @@ def move_window(event):
 # Sets window color
 m.configure(bg='grey10')
 
+#creates cyphers to be used for encoding/decoding
+subst_cypher = csi280_codec.SubstitutionCypher.new_cypher()
+rot13_cypher = csi280_codec.SubstitutionCypher.Rot13()
+
 #command for when encrypt button is clicked, checks selected algorithm and text entry and encrypts accordingly
 def click_encrypt_button():
-    print("en_str: " + text_entry.get(1.0, 'end'))
+    print("en_str: " + text_entry.get(1.0, 'end-1c'))
     if selected_algorithm.get() == 'Substitution':
-        encoded_text = csi280_codec.SubstitutionCypher.encode(text_entry.get(1.0, 'end'))
+        encoded_text = subst_cypher.encode(text_entry.get(1.0, 'end-1c'))
         output_box.delete(1.0, 'end')
         output_box.insert(1.0, encoded_text)
     elif selected_algorithm.get() == 'Permutation':
-        encoded_text = csi280_codec.PermutationCypher.encode(text_entry.get(1.0, 'end'))
+        encoded_text = csi280_codec.PermutationCypher.encode(text_entry.get(1.0, 'end-1c'))
+        output_box.delete(1.0, 'end')
+        output_box.insert(1.0, encoded_text)
+    elif selected_algorithm.get() == 'Caesar':
+        caesar_cypher = csi280_codec.SubstitutionCypher.Caeser(int(key_entry.get(1.0, 'end-1c')))
+        encoded_text = caesar_cypher.encode(text_entry.get(1.0, 'end-1c'))
+        output_box.delete(1.0, 'end')
+        output_box.insert(1.0, encoded_text)
+    elif selected_algorithm.get() == 'Rot13':
+        encoded_text = rot13_cypher.encode(text_entry.get(1.0, 'end-1c'))
         output_box.delete(1.0, 'end')
         output_box.insert(1.0, encoded_text)
     elif selected_algorithm.get() == 'None':
         output_box.delete(1.0, 'end')
-        output_box.insert(1.0, text_entry.get(1.0, 'end'))
+        output_box.insert(1.0, text_entry.get(1.0, 'end-1c'))
 
 #command for when decrypt button is clicked, checks selected algorithm and text entry and decrypts accordingly
 def click_decrypt_button():
-    print("de_str: " + text_entry.get(1.0, 'end'))
+    print("de_str: " + text_entry.get(1.0, 'end-1c'))
     if selected_algorithm.get() == 'Substitution':
-        decoded_text = csi280_codec.SubstitutionCypher.decode(text_entry.get(1.0, 'end'))
+        decoded_text = subst_cypher.decode(text_entry.get(1.0, 'end-1c'))
         output_box.delete(1.0, 'end')
         output_box.insert(1.0, decoded_text)
     elif selected_algorithm.get() == 'Permutation':
-        decoded_text = csi280_codec.PermutationCypher.decode(text_entry.get(1.0, 'end'))
+        decoded_text = csi280_codec.PermutationCypher.decode(text_entry.get(1.0, 'end-1c'))
+        output_box.delete(1.0, 'end')
+        output_box.insert(1.0, decoded_text)
+    elif selected_algorithm.get() == 'Caesar':
+        caesar_cypher = csi280_codec.SubstitutionCypher.Caeser(int(key_entry.get(1.0, 'end-1c')))
+        decoded_text = caesar_cypher.decode(text_entry.get(1.0, 'end'))
+        output_box.delete(1.0, 'end')
+        output_box.insert(1.0, decoded_text)
+    elif selected_algorithm.get() == 'Rot13':
+        decoded_text = rot13_cypher.decode(text_entry.get(1.0, 'end-1c'))
         output_box.delete(1.0, 'end')
         output_box.insert(1.0, decoded_text)
     elif selected_algorithm.get() == 'None':
         output_box.delete(1.0, 'end')
-        output_box.insert(1.0, text_entry.get(1.0, 'end'))
+        output_box.insert(1.0, text_entry.get(1.0, 'end-1c'))
 
 #top bar set up
 top_bar= Frame(m, bg='grey10', relief='raised', bd=2)
@@ -54,7 +77,7 @@ main_window= Canvas(m, bg='grey10')
 algorithm_selector_label = Label(main_window, text='Select Algorithm: ', font=('courier', 8), bg='grey10', fg='grey80')
 algorithm_selector_label.grid(row=1, column=0, columnspan=1, padx=10, pady=10)
 
-algorithms = ['Substitution', 'Permutation', 'None']
+algorithms = ['Substitution', 'Permutation (WIP)', 'Caesar', 'Rot13', 'None']
 selected_algorithm = StringVar(m)
 selected_algorithm.set('Substitution')
 selection_box = OptionMenu(main_window, selected_algorithm, *algorithms)
