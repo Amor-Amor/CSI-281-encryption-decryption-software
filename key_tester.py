@@ -1,11 +1,14 @@
 import random
+import secrets
 
 
 def permutation_key():
     """Generate key for permutation cypher"""
+    # Import SystemRandom class through secrets
+    secrets_generator = secrets.SystemRandom()
 
     # Create a random size for the list from 3 to 10
-    size = random.randint(3, 10)
+    size = secrets_generator.randrange(3, 10)
 
     key = []
     count = 0
@@ -29,7 +32,7 @@ def substitution_key():
 
     # Create format for key style
     key = {
-        "a": ".",
+        "a": "",
         "b": "",
         "c": "",
         "d": "",
@@ -63,12 +66,18 @@ def substitution_key():
     # Loop over each element in key
     for element in key:
         # Pick random character in alphabet string
-        index = random.randint(0, 25)
+        index = secrets.randbelow(26)
 
         # Loop to make sure we don't repeat characters
-        # EX: 'q': 'q'
-        while alphabet[index] != key[element]:
+        # EX: 'q': 'q' or 'a': 'q' AND 'b': 'q'
+        print(alphabet[index])
+        print(element)
+        while alphabet[index] != key[element] and alphabet[index] != element and element:
+            index = secrets.randbelow(len(alphabet))
             key[element] = alphabet[index]
+
+        print("Letter: " + alphabet[index])
+        print("Rand Letter: " + element)
 
         # Remove used character from alphabet string
         alphabet.replace(alphabet[index], "")
