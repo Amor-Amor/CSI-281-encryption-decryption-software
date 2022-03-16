@@ -65,30 +65,31 @@ def substitution_key():
 
     # Loop over each element in key
     for element in key:
-        # Pick random character in alphabet string
-        index = secrets.randbelow(26)
+        # Pick random character in alphabet string and assign it to its place in key
+        index = secrets.randbelow(len(alphabet))
+        key[element] = alphabet[index]
 
         # Loop to make sure we don't repeat characters
         # EX: 'q': 'q' or 'a': 'q' AND 'b': 'q'
-        print(alphabet[index])
-        print(element)
-        while alphabet[index] != key[element] and alphabet[index] != element and element:
+        while alphabet[index] == element:
             index = secrets.randbelow(len(alphabet))
             key[element] = alphabet[index]
 
-        print("Letter: " + alphabet[index])
-        print("Rand Letter: " + element)
-
         # Remove used character from alphabet string
-        alphabet.replace(alphabet[index], "")
+        alphabet = alphabet.replace(alphabet[index], '')
 
     print(key)
     return key
 
 
 def main():
+    print("PERMUTATION KEY: ")
     p_key = permutation_key()
+    print("")
+
+    print("SUBSTITUTION KEY: ")
     s_key = substitution_key()
+    print("")
 
 
 if __name__ == "__main__":
