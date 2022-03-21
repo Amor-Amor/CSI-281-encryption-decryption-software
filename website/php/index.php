@@ -45,12 +45,17 @@
 				theme: "snow" 
 			});
 
-            function encryptSubmit() {
-                $("#input-box").on("submit",function(){
-				$("#plainTextInput").val($("#userInput .ql-editor").html());
-			    })	
-                document.getElementById("display-result").innerHTML = "1231231";
-            }
+            var form = document.querySelector('form');
+            form.onsubmit = function() {
+                // Populate hidden form on submit
+            var hiddenBox = document.querySelector('input[name=plainTextInput]');
+            hiddenBox.value = JSON.stringify(userInput.getContents());
+            // function encryptSubmit() {
+            //     $("#input-box").on("submit",function(){
+			// 	$("#plainTextInput").val($("#userInput .ql-editor").html());
+			//     })	
+            //     document.getElementById("display-result").innerHTML = "1231231";
+            // }
         </script>
     </body>
 </html>
