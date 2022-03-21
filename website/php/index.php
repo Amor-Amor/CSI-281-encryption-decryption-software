@@ -45,9 +45,10 @@
 				theme: "snow" 
 			});
 
-            var form = document.querySelector('form');
-            form.onsubmit = function() {
-                // Populate hidden form on submit
+            // var form = document.querySelector('form');
+            // form.onsubmit = function() {
+            //     // Populate hidden form on submit
+            function onclick="encryptSubmit() {
                 var hiddenBox = document.querySelector('input[name=plainTextInput]');
                 hiddenBox.value = JSON.stringify(userInput.getContents());
                 document.getElementById("display-result").innerHTML = hiddenBox.value;
