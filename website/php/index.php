@@ -13,7 +13,7 @@
                     <label for="plainTextInput">Encrypting...</label>
                     <input  type="hidden" name="plainTextInput" id="plainTextInput">
                     <div id="userInput"></div>
-                    <button class="button" type="submit" name="submit" onclick="encryptSubmit()"><i class="fas fa-save"></i> Submit </button>
+                    <button class="button" onclick="encryptSubmit()"><i class="fas fa-save"></i> Submit </button>
                 </form>
             </div>
             <div id="display">
