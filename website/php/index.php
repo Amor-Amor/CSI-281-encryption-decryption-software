@@ -45,9 +45,12 @@
 				theme: "snow" 
 			});
 
-            $("#input-box").on("submit",function(){
-				$("#plainTextInput").val($("#userInput .ql-editor").html());
-			})	
+            var form = document.querySelector('form');
+            form.onsubmit = function() {
+                // Populate hidden form on submit
+            var about = document.querySelector('input[name=plainTextInput]');
+            about.value = JSON.stringify(quill.getContents());
+  
 
             function encryptSubmit() {
                 document.getElementById("display-result").innerHTML = $plainTextInput;
