@@ -9,12 +9,9 @@
         <?php include("head-banner.php") ?>
         <div id="page-container">
             <div id="text-box-wrapper">
-                <form id="input-box">
-                    <label for="plainTextInput">Encrypting...</label>
-                    <input  type="hidden" name="plainTextInput" id="plainTextInput">
-                    <div id="userInput"></div>
-                    <button class="button" type="button" name="submit" onclick="encryptSubmit()"><i class="fas fa-save"></i> Submit </button>
-                </form>
+                <p  style="display: none;" name="plainTextInput" id="plainTextInput">
+                <div id="userInput"></div>
+                <button class="button" type="button" onclick="encryptSubmit()"><i class="fas fa-save"></i> Submit </button>
             </div>
             <div id="display">
                 <h1> Display </h1>
@@ -49,7 +46,7 @@
             // form.onsubmit = function() {
             //     // Populate hidden form on submit
             function encryptSubmit() {
-                var hiddenBox = document.querySelector('input[name=plainTextInput]');
+                var hiddenBox = document.querySelector('p[name=plainTextInput]');
                 hiddenBox.value = JSON.stringify(userInput.getContents());
                 document.getElementById("display-result").innerHTML = hiddenBox.value;
             }
