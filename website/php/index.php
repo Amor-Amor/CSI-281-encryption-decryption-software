@@ -13,10 +13,11 @@
                     <label for="plainTextInput">Encrypting...</label>
                     <input name="plainTextInput" id="plainTextInput">
                     <div id="userInput"></div>
-                    <button class="button" type="submit" name="submit" onclick="encryptSubmit()"><i class="fas fa-save"></i> Save</button>
+                    <button class="button" type="submit" name="submit" onclick="encryptSubmit()"><i class="fas fa-save"></i> Submit </button>
                 </form>
             </div>
             <div id="display">
+                <h1> Display </h1>
                 <p id="display-result"></p>
             </div>
         </div>
