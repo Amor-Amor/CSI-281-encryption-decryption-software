@@ -10,7 +10,7 @@
         <?php include("head-banner.php") ?>
         <div id="page-container">
             <div id="text-box-wrapper">
-                <p  style="display: none;" name="plainTextInput" id="plainTextInput">
+                <p name="plainTextInput" id="plainTextInput">
                 <div id="userInput"></div>
                 <button class="button" type="button" onclick="encryptSubmit()"><i class="fa-solid fa-lock"></i> Submit </button>
             </div>
