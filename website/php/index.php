@@ -43,18 +43,12 @@
 				},
 				placeholder: "Data to be encrypted goes here...",
 				theme: "snow" 
-                
-            var form = document.querySelector('form');
-            form.onsubmit = function() {
-                // Populate hidden form on submit
-            var plainTextInput = document.querySelector('input[name=plainTextInput]');
-            plainTextInput.value = JSON.stringify(userInput.getContents());
-  
 			});
 
-            
-
             function encryptSubmit() {
+                $("#input-box").on("submit",function(){
+				$("#plainTextInput").val($("#userInput .ql-editor").html());
+			    })	
                 document.getElementById("display-result").innerHTML = $plainTextInput;
             }
         </script>
