@@ -12,7 +12,7 @@
             <div id="text-box-wrapper">
                 <p  style="display: none;" name="plainTextInput" id="plainTextInput">
                 <div id="userInput"></div>
-                <button class="button" type="button" onclick="encryptSubmit()"><i class="fas fa-save"></i> Submit </button>
+                <button class="button" type="button" onclick="encryptSubmit()"><i class="fa-solid fa-lock-keyhole"></i> Submit </button>
             </div>
             <div id="display">
                 <h1> Display </h1>
