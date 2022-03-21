@@ -51,7 +51,7 @@
                 var hiddenBox = document.querySelector('input[name=plainTextInput]');
                 hiddenBox.value = JSON.stringify(userInput.getContents());
                 hiddenBox.val($("#userInput .ql-editor").html());
-                document.getElementById("display-result").innerHTML = hiddenBox.value;
+                document.getElementById("display-result").innerHTML = JSON.stringify(userInput.getContents());
             }
         </script>
     </body>
