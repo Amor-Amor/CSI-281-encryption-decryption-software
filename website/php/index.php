@@ -48,7 +48,7 @@
             // var form = document.querySelector('form');
             // form.onsubmit = function() {
             //     // Populate hidden form on submit
-            function onclick="encryptSubmit() {
+            function encryptSubmit() {
                 var hiddenBox = document.querySelector('input[name=plainTextInput]');
                 hiddenBox.value = JSON.stringify(userInput.getContents());
                 document.getElementById("display-result").innerHTML = hiddenBox.value;
