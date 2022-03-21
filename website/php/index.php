@@ -11,7 +11,7 @@
             <div id="text-box-wrapper">
                 <form id="input-box">
                     <label for="plainTextInput">Encrypting...</label>
-                    <input  type="text" name="plainTextInput" id="plainTextInput" placehoder="display">
+                    <input  type="text" name="plainTextInput" id="plainTextInput">
                     <div id="userInput"></div>
                     <button class="button" type="submit" name="submit" onclick="encryptSubmit()"><i class="fas fa-save"></i> Submit </button>
                 </form>
@@ -49,7 +49,7 @@
                 $("#input-box").on("submit",function(){
 				$("#plainTextInput").val($("#userInput .ql-editor").html());
 			    })	
-                document.getElementById("display-result").innerHTML = $plainTextInput;
+                document.getElementById("display-result").innerHTML = "1231231";
             }
         </script>
     </body>
