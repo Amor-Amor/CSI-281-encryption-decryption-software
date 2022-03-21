@@ -9,7 +9,7 @@
         <?php include("head-banner.php") ?>
         <div id="page-container">
             <div id="text-box-wrapper">
-                <form>
+                <form id="input-box">
                     <label for="plainTextInput">Encrypting...</label>
                     <input name="plainTextInput" id="plainTextInput">
                     <div id="userInput"></div>
@@ -45,7 +45,7 @@
 				theme: "snow" 
 			});
 
-            $("#newAnnouncement").on("submit",function(){
+            $("#input-box").on("submit",function(){
 				$("#plainTextInput").val($("#userInput .ql-editor").html());
 			})	
 
