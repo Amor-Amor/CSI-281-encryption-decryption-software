@@ -50,7 +50,7 @@
                 // Populate hidden form on submit
                 var hiddenBox = document.querySelector('input[name=plainTextInput]');
                 hiddenBox.value = JSON.stringify(userInput.getContents());
-                hiddenBox.val($("#userInput .ql-editor").html());
+                // hiddenBox.val($("#userInput .ql-editor").html());
                 document.getElementById("display-result").innerHTML = userInput.getContents().html();
             }
         </script>
