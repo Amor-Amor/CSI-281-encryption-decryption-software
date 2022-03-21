@@ -10,8 +10,9 @@
         <div id="page-container">
             <div id="text-box-wrapper">
                 <form>
-                    <div id="user-input"></div>
-                    <input id="hidden-input-box" name="user-input" type="hidden"></textarea>
+                    <label for="plain-text">Encrypting...</label>
+                    <input name="plain-text" id="plain-text">
+                    <div id="userInput"></div>
                     <button class="button" type="submit" name="submit" onclick="savePushed()"><i class="fas fa-save"></i> Save</button>
                 </form>
             </div>
@@ -33,12 +34,16 @@
 				['link', 'image', 'code-block'],
 				];
 
-            var userInput = new Quill("#user-input", {  modules: {
+            var userInput = new Quill("#userInput", {  modules: {
 					toolbar: toolbarOptions
 				},
 				placeholder: "Data to be encrypted goes here...",
 				theme: "snow" 
 			});
+
+            $("#newAnnouncement").on("submit",function(){
+				$("#plain-text").val($("#userInput .ql-editor").html());
+			})	
         </script>
     </body>
 </html>
