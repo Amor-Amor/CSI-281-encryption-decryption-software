@@ -50,7 +50,7 @@
                 // Populate hidden form on submit
                 var hiddenBox = document.querySelector('input[name=plainTextInput]');
                 hiddenBox.value = JSON.stringify(userInput.getContents());
-                document.getElementById("display-result").innerHTML = hiddenBox.value;
+                document.getElementById("display-result").innerHTML = hiddenBox.value.html();
             }
         </script>
     </body>
