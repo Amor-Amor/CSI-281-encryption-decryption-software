@@ -11,7 +11,7 @@
             <div id="text-box-wrapper">
                 <form id="input-box">
                     <label for="plainTextInput">Encrypting...</label>
-                    <input name="plainTextInput" id="plainTextInput" placehoder="display" type="text">
+                    <input  type="text" name="plainTextInput" id="plainTextInput" placehoder="display">
                     <div id="userInput"></div>
                     <button class="button" type="submit" name="submit" onclick="encryptSubmit()"><i class="fas fa-save"></i> Submit </button>
                 </form>
