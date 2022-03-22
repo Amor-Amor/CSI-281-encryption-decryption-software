@@ -4,10 +4,6 @@
         <link rel="stylesheet" href="/css/style.css">
         <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">	
         <link href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" rel="stylesheet">
-         <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     </head>
     <body>
         <?php include("sidebar.php") ?>
@@ -16,7 +12,7 @@
             <div id="text-box-wrapper">
                 <p name="plainTextInput" id="plainTextInput">
                 <div id="userInput"></div>
-                <button class="button" type="button" onclick="encryptSubmit()"><i class="fa-solid fa-lock"></i> Submit </button>
+                <button class="button" type="button" onclick="encryptSubmit()"><i class="fas fa-user-secret"></i> Encrypt </button>
             </div>
             <div id="display">
                 <p class="flow-text" id="display-result"></p>
