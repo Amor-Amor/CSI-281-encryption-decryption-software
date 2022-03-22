@@ -1,4 +1,4 @@
-.button {
+/* .button {
     border: none;
     color: #090909;
     padding: 0.7em 1.7em;
@@ -9,4 +9,34 @@
     transition: all .3s;
     box-shadow: 6px 6px 12px #c5c5c5,
                 -6px -6px 12px #ffffff;
-   }
+} */
+
+#page-container {
+    display: grid;
+    grid-template-columns: 10fr 1fr 10fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "input button output";
+    height: max-content;
+}
+
+#text-box-wrapper {
+    grid-area: input;
+    margin: 10px;
+}
+
+#display {
+    grid-area: output;
+    border-style: ridge;
+    margin: 25px 10px 10px 10px;
+    height: 100%;
+}
+
+#submit-button {
+    grid-area: button;
+    margin-top: 20px;
+}
+
+#display-result {
+    overflow-wrap: break-word;
+}

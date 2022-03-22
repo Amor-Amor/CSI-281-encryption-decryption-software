@@ -12,10 +12,10 @@
             <div id="text-box-wrapper">
                 <p name="plainTextInput" id="plainTextInput">
                 <div id="userInput"></div>
-                <button class="button" type="button" onclick="encryptSubmit()"><i class="fas fa-user-secret"></i> Encrypt </button>
             </div>
+            <button class="button" id="submit-button"type="button" onclick="encryptSubmit()"><i class="fas fa-user-secret"></i> Encrypt </button>
             <div id="display">
-                <p class="flow-text" id="display-result"></p>
+                <p class="flow-text" id="display-result"> </p>
             </div>
         </div>
         <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
