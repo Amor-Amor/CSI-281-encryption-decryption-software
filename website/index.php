@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="/css/style.css">
         <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">	
         <link href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" rel="stylesheet">
     </head>
@@ -10,13 +10,12 @@
         <?php include("head-banner.php") ?>
         <div id="page-container">
             <div id="text-box-wrapper">
-                <p  style="display: none;" name="plainTextInput" id="plainTextInput">
+                <p name="plainTextInput" id="plainTextInput">
                 <div id="userInput"></div>
-                <button class="button" type="button" onclick="encryptSubmit()"><i class="fa-solid fa-lock"></i> Submit </button>
             </div>
+            <button class="button" id="submit-button"type="button" onclick="encryptSubmit()"><i class="fas fa-user-secret"></i> Encrypt </button>
             <div id="display">
-                <h1> Display </h1>
-                <p id="display-result"></p>
+                <p class="flow-text" id="display-result"> </p>
             </div>
         </div>
         <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
