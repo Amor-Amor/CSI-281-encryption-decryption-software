@@ -37,8 +37,8 @@ def secrets_key():
     return encryption_key
 
 
-def create_key(int_key):
-    """Create an alphabetic key using the keys generated above."""
+def caesar_key(int_key):
+    """Create an alphabetic key using a given key."""
     encryption_key = int_key
     # Create format for key style
     key = {
@@ -89,9 +89,12 @@ def main():
     # print(prime_num_key())
     # print(secrets_key())
 
-    int_key = secrets_key()
-    print("Integer key is: " + str(int_key))
-    create_key(int_key)
+    # int_key = secrets_key()
+    # print("Integer key is: " + str(int_key))
+
+    print("CAESAR KEY: ")
+    caesar_key(5)
+    print("")
 
 
 if __name__ == '__main__':
