@@ -1,7 +1,7 @@
 <div id="sidebar-wrapper">
     <p>Link Groups Title 1</p>
     <ul class="sidebar-link-group">
-        <li><a href="/website/index.php"><i class="bi bi-house-door-fill"></i>homepage (template)</a></li>
+        <li><a href="/index.php"><i class="bi bi-house-door-fill"></i>homepage (template)</a></li>
         <li><a href="https://www.google.com/"><i class="bi bi-google"></i>Google.com (template)</a></li>
     </ul>
     <p>Link Groups Title 2</p>
