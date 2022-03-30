@@ -23,7 +23,6 @@ def permutation_key():
     # Randomly shuffles the list
     random.shuffle(key)
 
-    print(key)
     return key
 
 
@@ -65,7 +64,7 @@ def substitution_key():
 
     # Loop over each element in key
     for element in key:
-        # Pick random character in alphabet string and assign it to its place in key
+        # Pick random character in alphabet string and set to its place in key
         index = secrets.randbelow(len(alphabet))
         key[element] = alphabet[index]
 
@@ -78,18 +77,15 @@ def substitution_key():
         # Remove used character from alphabet string
         alphabet = alphabet.replace(alphabet[index], '')
 
-    print(key)
     return key
 
 
 def main():
-    print("PERMUTATION KEY: ")
     p_key = permutation_key()
-    print("")
+    print("PERMUTATION KEY:", p_key)
 
-    print("SUBSTITUTION KEY: ")
     s_key = substitution_key()
-    print("")
+    print("SUBSTITUTION KEY:", s_key)
 
 
 if __name__ == "__main__":
