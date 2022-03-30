@@ -9,6 +9,7 @@
         <?php include("sidebar.php") ?>
         <?php include("head-banner.php") ?>
         <div id="page-container">
+            <h1 class="page-content-title"> Encrypt Your File</h1>
             <div id="text-box-wrapper">
                 <p name="plainTextInput" id="plainTextInput">
                 <div id="userInput"></div>

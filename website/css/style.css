@@ -1,34 +1,36 @@
-/* .button {
-    border: none;
-    color: #090909;
-    padding: 0.7em 1.7em;
-    font-size: 18px;
-    border-radius: 0.5em;
-    background: #e8e8e8;
-    border: 1px solid #e8e8e8;
-    transition: all .3s;
-    box-shadow: 6px 6px 12px #c5c5c5,
-                -6px -6px 12px #ffffff;
-} */
 
 #page-container {
+    z-index: 1;
+    width: calc(100vw - 200px);
+    position: absolute;
+    left: 200px;
+    flex-direction: column;
+    height: 80vh;
+    background-color: rgb(226, 226, 226);
+    padding-left: 10px;
     display: grid;
-    grid-template-columns: 10fr 1fr 10fr;
-    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 4fr 1fr 4fr;
     grid-template-areas: 
-    "input button output";
-    height: max-content;
+    "title"
+    "input"
+    "button"
+    "output";
+}
+.page-content-title {
+    grid-area: title;
+    text-align: center;
 }
 
 #text-box-wrapper {
     grid-area: input;
     margin: 10px;
+    display: grid;
 }
 
 #display {
     grid-area: output;
     border-style: ridge;
-    margin: 25px 10px 10px 10px;
     height: 100%;
 }
 
@@ -39,4 +41,57 @@
 
 #display-result {
     overflow-wrap: break-word;
+}
+
+
+/* Side bar CSS */
+#sidebar-wrapper
+{
+    z-index: 3;
+    position: fixed;
+    text-align: justify;
+    width: 200px;
+    height: 100%;
+    background: rgb(46, 62, 78);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+#sidebar-wrapper p {
+    margin-bottom: -1px;
+    font-weight: 900;
+    font-size: .8em;
+    text-indent: 12px;
+    font-family: 'Roboto', sans-serif;
+    color: #949ba1;
+}
+
+.ssidebar-link-group {
+    padding: 0;
+    margin-top: .3em;
+    margin-bottom: .5em;
+    list-style: none;
+    position: relative;
+  }
+.sidebar-link-group li {
+    font-family: 'Roboto', sans-serif;
+    font-size: .9em;
+    text-indent: 12px;
+    line-height: 40px;
+    font-weight: 900;
+}
+.sidebar-link-group li a {
+    color: #949ba1;
+    display: block;
+    text-decoration: none;
+}
+.sidebar-link-group li a:hover {
+    background: #056430;
+    color: white;
+}
+.sidebar-link-group li a:active {
+    background: #056430;
+    color: white;
+}
+.sidebar-link-group i {
+    padding-right: 20px;
 }
