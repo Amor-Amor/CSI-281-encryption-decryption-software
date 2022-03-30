@@ -8,6 +8,7 @@
 import wx
 import csi280_codec
 import os
+from os.path import join as joinpath
 
 # creates cyphers to be used for encoding/decoding
 subst_cypher = csi280_codec.SubstitutionCypher.new_cypher()
@@ -37,7 +38,7 @@ class Encryption_Frame(wx.Frame):
                               wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD)
 
         # Logo Image
-        filepath = os.getcwd() + '\\assets\logo.png'
+        filepath = joinpath(os.getcwd(), 'assets', 'logo.png')
         image = wx.Image(filepath, wx.BITMAP_TYPE_ANY)
         bitmap = wx.StaticBitmap(main_panel, -1, wx.BitmapFromImage(image))
         vbox.Add(bitmap, 1, wx.ALIGN_CENTER_HORIZONTAL, 0)
