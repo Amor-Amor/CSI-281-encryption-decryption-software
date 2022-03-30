@@ -1,4 +1,3 @@
-
 <div id="sidebar-wrapper">
     <p>Link Groups Title 1</p>
     <ul class="sidebar-link-group">

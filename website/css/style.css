@@ -151,10 +151,10 @@
 
 #page-header i {
     margin-top: 5px;
-  
+}
+
 /* Side bar CSS */
-#sidebar-wrapper
-{
+#sidebar-wrapper {
     z-index: 3;
     position: fixed;
     text-align: justify;
