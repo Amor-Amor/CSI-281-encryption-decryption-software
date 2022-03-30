@@ -33,10 +33,6 @@ class Encryption_Frame(wx.Frame):
         font = wx.Font(15, wx.FONTFAMILY_ROMAN,
                        wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL)
 
-        # Specifies header font
-        header_font = wx.Font(24, wx.FONTFAMILY_TELETYPE,
-                              wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD)
-
         # Logo Image
         filepath = joinpath(os.getcwd(), 'assets', 'logo.png')
         image = wx.Image(filepath, wx.BITMAP_TYPE_ANY)
