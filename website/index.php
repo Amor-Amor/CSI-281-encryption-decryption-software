@@ -6,8 +6,9 @@
         <link href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" rel="stylesheet">
     </head>
     <body>
+        <script type="text/javascript" src="/website/js/page_header.js"></script>
         <?php include("sidebar.php") ?>
-        <?php include("head-banner.php") ?>
+        <?php include("page_header.php") ?>
         <div id="page-container">
             <div id="text-box-wrapper">
                 <p name="plainTextInput" id="plainTextInput">
