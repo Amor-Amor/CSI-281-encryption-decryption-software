@@ -44,9 +44,117 @@
 }
 
 
-/* Side bar CSS */
-#sidebar-wrapper
+/* Header CSS */
+#page-header
 {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    height: 55px;
+    width: 100vw;
+    background: white;
+    box-shadow: 0 3px 6px rgba(14, 11, 11, 0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+
+#page-header a {
+    color: black;
+    text-decoration: none;
+}
+
+#page-header .header-links
+{
+    display: flex;
+    position: absolute;
+    left: 0vw;
+    background-color: white;
+}
+
+#page-header button {
+    border: none;
+    background: inherit;
+    height: 55px;
+    margin-left: 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+}
+
+.navBtn {
+    overflow: clip;
+    float: left;
+    text-align: center;
+    overflow: inherit;
+}
+
+@media only screen and (max-width: 1400px){
+    #page-header button {
+        font-size: 18px;
+        margin-left: 15px;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    #page-header button {
+        font-size: 1.8vw;
+        margin-left: 0px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    #page-header button{
+        font-size: 12px;
+    }
+}
+
+#page-header .header-links a:hover i {
+    transition: all 0.2s ease-in-out;
+    color: black;
+}
+
+#page-header button:nth-child(1) i
+{
+    color: rgb(255, 140, 0);
+}
+
+#page-header button:nth-child(2) i
+{
+    color: rgb(255, 153, 204)
+}
+
+#page-header button:nth-child(3) i
+{
+    color: rgb(0, 204, 153)
+}
+
+#page-header button:nth-child(4) i
+{
+    color: rgb(255, 80, 80)
+}
+
+#page-header button:nth-child(5) i
+{
+    color: rgb(0, 0, 255)
+}
+
+#page-header button:nth-child(6) i
+{
+    color: rgb(200, 277, 255);
+}
+
+#page-header button:nth-child(7) i
+{
+    color: rgb(240,230,140);
+}
+
+#page-header button:nth-child(8) i
+{
+    color: rgb(200, 77, 255);
+}
+
+#page-header i {
+    margin-top: 5px;
+}
+
+/* Side bar CSS */
+#sidebar-wrapper {
     z-index: 3;
     position: fixed;
     text-align: justify;
