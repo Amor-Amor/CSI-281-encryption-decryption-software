@@ -448,3 +448,8 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/vim,visualstudiocode,intellij,macos,linux,python,pycharm,windows
+
+
+# DPKG build
+_dpkg-root
+*.deb
