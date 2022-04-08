@@ -1,1 +1,17 @@
-# TODO
+HOW TO RUN WEBSITE (Windows)
+
+Install PHP:
+  - Go to https://windows.php.net/download#php-8.1 to install
+    - x64 Thread Safe ZIP is preferred
+  - Create a php folder in the root of your C:\ drive and extract zip into it
+  - To use the default configuration, copy and paste 'php.ini-development' into php folder and rename it to 'php.ini'
+  - Add PHP to to PATH
+    - Click Windows start button and type 'environment' and go to 'Edit the system environment variables'
+    - Select 'Advanced' and then 'Environment Variables'
+    - Click 'New' and enter 'C:\php'
+
+Run Website:
+  - Open Git Bash (Install at https://git-scm.com/download/win for Windows)
+  - 'cd' into the '67-website-skeleton' GitHub repository or wherever your repository is cloned
+  - Enter the command 'php -S localhost:8000'
+  - Go to a web browser and enter 'localhost:8000'
