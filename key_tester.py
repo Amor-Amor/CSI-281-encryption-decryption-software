@@ -64,7 +64,7 @@ def substitution_key():
         "w": "",
         "x": "",
         "y": "",
-        "z": ""
+        "z": "",
     }
 
     # Create string of alphabet to use to assign to elements in dictionary
@@ -83,7 +83,7 @@ def substitution_key():
             key[element] = alphabet[index]
 
         # Remove used character from alphabet string
-        alphabet = alphabet.replace(alphabet[index], '')
+        alphabet = alphabet.replace(alphabet[index], "")
 
     print(key)
     return key
@@ -119,7 +119,7 @@ def caesar_key(int_key):
         "w": "",
         "x": "",
         "y": "",
-        "z": ""
+        "z": "",
     }
 
     # Create string of alphabet to use to assign to elements in dictionary

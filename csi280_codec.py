@@ -35,7 +35,7 @@ class SubstitutionCypher(Codec):
 
     def encode(self, plaintext):
         """Encode the plaintext with self.key"""
-        cyphertext = ''
+        cyphertext = ""
         for c in plaintext:
             if c in self.key:
                 cyphertext += self.key[c]
@@ -46,9 +46,9 @@ class SubstitutionCypher(Codec):
     def decode(self, cyphertext):
         """Decode the cyphertext with self.key"""
         # First time called - generate reverse key mapping
-        if not hasattr(self, '__reverse_key'):
+        if not hasattr(self, "__reverse_key"):
             self.__reverse_key = {v: k for k, v in self.key.items()}
-        plaintext = ''
+        plaintext = ""
         for c in cyphertext:
             if c in self.__reverse_key:
                 plaintext += self.__reverse_key[c]
