@@ -155,6 +155,7 @@
 
 /* Side bar CSS */
 #sidebar-wrapper {
+    margin-top: 50px;
     z-index: 3;
     position: fixed;
     text-align: justify;
@@ -173,7 +174,7 @@
     color: #949ba1;
 }
 
-.ssidebar-link-group {
+.sidebar-link-group {
     padding: 0;
     margin-top: .3em;
     margin-bottom: .5em;

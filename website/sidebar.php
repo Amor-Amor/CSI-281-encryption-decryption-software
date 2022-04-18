@@ -1,12 +1,12 @@
 <div id="sidebar-wrapper">
-    <p>Link Groups Title 1</p>
+    <p>Download Links</p>
     <ul class="sidebar-link-group">
-        <li><a href="/index.php"><i class="bi bi-house-door-fill"></i>homepage (template)</a></li>
-        <li><a href="https://www.google.com/"><i class="bi bi-google"></i>Google.com (template)</a></li>
+        <li><a href="https://drive.google.com/file/d/11cx_Ed_lNqEmexmb1frCmaZHU18gG7vW/view?usp=sharing"><i class="bi bi-house-door-fill"></i>Download GUI I</a></li>
+        <li><a href="hhttps://drive.google.com/file/d/11R0f9blkvCaZAJvUYJ3peBT5fq4Ttu8f/view?usp=sharing"><i class="bi bi-google"></i>Download GUI II</a></li>
     </ul>
-    <p>Link Groups Title 2</p>
+    <p>Documentation</p>
     <ul class="sidebar-link-group">
-        <li><a href="https://my.champlain.edu/"><i class="bi bi-bank2"></i>my.champlain.edu (template)</a></li>
-        <li><a href="https://www.google.com/"><i class="bi bi-google"></i>Google.com (template)</a></li>
+        <li><a href="https://github.com/Amor-Amor/CSI-281-encryption-decryption-software"><i class="bi bi-bank2"></i>GitHub</a></li>
+        <li><a href="https://docs.google.com/presentation/d/1NiAzxYqBskVMlauqS0pen6KkjzkHwHN3LuS5h-PNdEw/edit?usp=sharing"><i class="bi bi-google"></i>Demo Slide Show</a></li>
     </ul>
 </div>
