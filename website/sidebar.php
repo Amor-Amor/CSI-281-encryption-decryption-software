@@ -2,7 +2,7 @@
     <p>Download Links</p>
     <ul class="sidebar-link-group">
         <li><a href="https://drive.google.com/file/d/11cx_Ed_lNqEmexmb1frCmaZHU18gG7vW/view?usp=sharing"><i class="bi bi-house-door-fill"></i>Download GUI I</a></li>
-        <li><a href="hhttps://drive.google.com/file/d/11R0f9blkvCaZAJvUYJ3peBT5fq4Ttu8f/view?usp=sharing"><i class="bi bi-google"></i>Download GUI II</a></li>
+        <li><a href="https://drive.google.com/file/d/11R0f9blkvCaZAJvUYJ3peBT5fq4Ttu8f/view?usp=sharing"><i class="bi bi-google"></i>Download GUI II</a></li>
     </ul>
     <p>Documentation</p>
     <ul class="sidebar-link-group">
